@@ -73,7 +73,8 @@ function createMap(earthquakes) {
     // Adding our geoJSON data, along with style information, to the tectonicplates
     // layer.
     L.geoJson(plate, {
-      color: "skyblue"
+      weight: 2,
+      color: "orange"
     })
       .addTo(tPlates);
   });
@@ -117,7 +118,7 @@ function createMap(earthquakes) {
 // loop through our density intervals and generate a label with a colored square for each interval
 for (var i = 0; i < grades.length; i++) {
     div.innerHTML +=
-        '<i style=" + circleColor(grades[i] + 1)"></i> ' +
+        '<i style="background:' + circleColor(grades[i] + 1) + '"></i> ' +
         grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
 }
     return div;
